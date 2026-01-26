@@ -47,7 +47,8 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('foto-dor.jpg');
+            /* AQUI: Usando o nome exato do seu print com extensão dupla */
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -215,9 +216,10 @@
         }
 
         .author-img {
-            width: 250px; /* Aumentei a foto do autor */
+            width: 280px;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+            object-fit: cover;
         }
 
         /* --- BÔNUS --- */
@@ -237,7 +239,7 @@
         }
 
         .bonus-img {
-            max-width: 200px;
+            max-width: 250px;
             margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -316,7 +318,7 @@
             
             <div class="split-content">
                 <div class="image">
-                    <img src="foto-postura.jpg" alt="Postura errada no computador" style="box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="foto-postura.jpg.png" alt="Postura errada no computador" style="box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 10px;">A famosa "postura de tartaruga" que gera dores crônicas.</p>
                 </div>
                 <div class="text">
@@ -341,7 +343,7 @@
         <div class="container">
             <h2 class="section-title">Você não precisa viver rígido.<br>Sua coluna precisa de <span style="color: var(--primary);">Movimento</span>.</h2>
             
-            <img src="foto-alivio.jpg" alt="Alívio e alongamento" style="max-width: 600px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <img src="foto-alivio.jpg.png" alt="Alívio e alongamento" style="max-width: 600px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
 
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 50px;">
                 Apresento o <strong>Guia Coluna Saudável no Home Office</strong>. Não é um livro teórico. É um manual visual de sobrevivência para quem trabalha sentado.
@@ -350,6 +352,9 @@
             <div class="split-content">
                 <div class="image">
                     <img src="print-capa.png" alt="Capa do Ebook" class="ebook-mockup">
+                    
+                    <p style="text-align: center; margin-top: 20px; font-weight: bold; color: var(--primary);">Por dentro do Guia:</p>
+                    <img src="impressão-ergonomia.png" alt="Exemplo de Ergonomia" style="margin-top: 10px; border: 1px solid #ccc; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                 </div>
                 <div class="text">
                     <div class="benefits-grid">
@@ -374,7 +379,7 @@
     <section class="authority-section">
         <div class="container">
             <div class="author-box">
-                <img src="foto-jp.jpg" alt="Dr. João Paulo Cardozo" class="author-img">
+                <img src="foto-jp.jpg.png" alt="Dr. João Paulo Cardozo" class="author-img">
                 
                 <div class="author-text" style="max-width: 500px;">
                     <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Criado por João Paulo Cardozo</h3>
