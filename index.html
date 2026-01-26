@@ -42,14 +42,29 @@
             max-width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* --- TRUQUE PARA CORTAR O SÍMBOLO DA IA --- */
+        
+        /* 1. A moldura que esconde o que vaza para fora */
+        .crop-container {
+            overflow: hidden; 
             border-radius: 12px;
+            position: relative;
+        }
+
+        /* 2. O zoom que empurra o símbolo para fora da moldura */
+        .crop-ia {
+            transform: scale(1.08); /* Aumenta 8% para cortar as bordas */
+            transform-origin: center;
+            object-fit: cover;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            /* AQUI: Usando o nome exato do seu print com extensão dupla */
+            /* AQUI: Dei um zoom no background (110%) para cortar as bordas da imagem de fundo */
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
-            background-size: cover;
+            background-size: 110%; /* Zoom para cortar bordas */
             background-position: center;
             color: var(--white);
             padding: 100px 0;
@@ -213,12 +228,12 @@
             padding: 40px;
             border-radius: 20px;
             border: 1px solid #bae6fd;
+            overflow: hidden; /* Importante para cortar a imagem do autor */
         }
 
         .author-img {
             width: 280px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+            /* box-shadow removido aqui pois o container já corta, se precisar ajuste */
             object-fit: cover;
         }
 
@@ -318,7 +333,9 @@
             
             <div class="split-content">
                 <div class="image">
-                    <img src="foto-postura.jpg.png" alt="Postura errada no computador" style="box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div class="crop-container">
+                        <img src="foto-postura.jpg.png" alt="Postura errada no computador" class="crop-ia">
+                    </div>
                     <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 10px;">A famosa "postura de tartaruga" que gera dores crônicas.</p>
                 </div>
                 <div class="text">
@@ -343,7 +360,9 @@
         <div class="container">
             <h2 class="section-title">Você não precisa viver rígido.<br>Sua coluna precisa de <span style="color: var(--primary);">Movimento</span>.</h2>
             
-            <img src="foto-alivio.jpg.png" alt="Alívio e alongamento" style="max-width: 600px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="crop-container" style="max-width: 600px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <img src="foto-alivio.jpg.png" alt="Alívio e alongamento" class="crop-ia">
+            </div>
 
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 50px;">
                 Apresento o <strong>Guia Coluna Saudável no Home Office</strong>. Não é um livro teórico. É um manual visual de sobrevivência para quem trabalha sentado.
@@ -354,7 +373,7 @@
                     <img src="print-capa.png" alt="Capa do Ebook" class="ebook-mockup">
                     
                     <p style="text-align: center; margin-top: 20px; font-weight: bold; color: var(--primary);">Por dentro do Guia:</p>
-                    <img src="impressão-ergonomia.png" alt="Exemplo de Ergonomia" style="margin-top: 10px; border: 1px solid #ccc; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="impressão-ergonomia.png" alt="Exemplo de Ergonomia" style="margin-top: 10px; border: 1px solid #ccc; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 8px;">
                 </div>
                 <div class="text">
                     <div class="benefits-grid">
@@ -379,7 +398,9 @@
     <section class="authority-section">
         <div class="container">
             <div class="author-box">
-                <img src="foto-jp.jpg.png" alt="Dr. João Paulo Cardozo" class="author-img">
+                <div class="crop-container" style="border-radius: 15px; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);">
+                    <img src="foto-jp.jpg.png" alt="Dr. João Paulo Cardozo" class="crop-ia author-img">
+                </div>
                 
                 <div class="author-text" style="max-width: 500px;">
                     <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Criado por João Paulo Cardozo</h3>
