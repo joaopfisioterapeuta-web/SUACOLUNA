@@ -21,7 +21,7 @@
             --white: #ffffff;
             --accent: #f59e0b;
             --success: #16a34a;
-            --danger: #ef4444; /* Vermelho para urgência */
+            --danger: #dc2626;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,12 +31,68 @@
             color: var(--secondary);
             line-height: 1.7;
             background-color: var(--bg-light);
-            -webkit-font-smoothing: antialiased;
+            padding-bottom: 80px; /* Espaço para a barra fixa não cobrir o rodapé */
         }
 
         h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         img { max-width: 100%; height: auto; display: block; border-radius: 12px; }
+
+        /* --- BARRA FIXA (STICKY BAR) --- */
+        .sticky-offer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            border-top: 4px solid var(--danger);
+            padding: 15px 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .sticky-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sticky-timer {
+            font-weight: 700;
+            color: var(--danger);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .sticky-price {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .btn-sticky {
+            background-color: var(--success);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
 
         /* HERO */
         .hero {
@@ -51,7 +107,7 @@
         .hero h1 { font-size: 3rem; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
         .hero p { font-size: 1.25rem; margin-bottom: 40px; max-width: 750px; margin-left: auto; margin-right: auto; opacity: 0.9; }
 
-        /* BOTÃO */
+        /* BOTÃO PADRÃO */
         .btn {
             display: inline-block;
             background-color: var(--primary);
@@ -90,7 +146,6 @@
         .ebook-mockup:hover { transform: scale(1.02) rotate(0deg); }
 
         .split-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        
         .benefits-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
         .benefit-card { background: var(--white); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 4px solid var(--success); }
         
@@ -99,21 +154,10 @@
         .author-box { display: flex; align-items: center; justify-content: center; gap: 50px; background: linear-gradient(to right, #f0f9ff, #e0f2fe); padding: 60px; border-radius: 30px; }
         .author-img { width: 300px; border: 8px solid var(--white); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
-        /* BÔNUS DUPLO (NOVO LAYOUT) */
-        .bonus-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .bonus-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
+        /* BÔNUS DUPLO */
+        .bonus-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: var(--white); text-align: center; }
+        .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; }
+        
         .bonus-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -125,71 +169,60 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        
         .bonus-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.3); }
-
-        .bonus-tag {
-            background: var(--accent);
-            color: #7c2d12;
-            font-weight: 800;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 20px;
-            align-self: center;
-        }
-
-        .bonus-img {
-            max-width: 220px;
-            margin: 0 auto 25px;
-            border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-
+        .bonus-tag { background: var(--accent); color: #7c2d12; font-weight: 800; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; display: inline-block; margin-bottom: 20px; align-self: center; }
+        .bonus-img { max-width: 220px; margin: 0 auto 25px; border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
         .bonus-title { font-size: 1.5rem; margin-bottom: 10px; color: white; }
         .bonus-desc { font-size: 1rem; opacity: 0.8; line-height: 1.5; margin-bottom: 20px; }
         
-        /* PREÇO DO BÔNUS (RISCADO) */
-        .bonus-price {
-            background: rgba(0,0,0,0.2);
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-top: auto; /* Empurra para o final do card */
-        }
+        .bonus-price { background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; font-weight: bold; margin-top: auto; }
         .price-strike { text-decoration: line-through; color: #94a3b8; margin-right: 5px; }
         .price-free { color: var(--success); font-size: 1.1em; }
 
-
-        /* OFERTA COM TIMER */
+        /* OFERTA COM VALUE STACK */
         .offer-section { text-align: center; background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 30px 30px; }
-        .offer-box { background: var(--white); border: 2px solid var(--primary); border-radius: 30px; padding: 80px 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 30px 60px -15px rgba(2, 132, 199, 0.2); position: relative; overflow: hidden; }
+        .offer-box { background: var(--white); border: 3px solid var(--primary); border-radius: 30px; padding: 60px 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 30px 60px -15px rgba(2, 132, 199, 0.2); position: relative; overflow: hidden; }
         
-        /* O CRONÔMETRO */
-        .timer-bar {
-            background-color: #fee2e2;
-            color: var(--danger);
+        /* BLOCO DE VALOR (VALUE STACK) */
+        .value-stack {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+            border: 1px dashed #cbd5e1;
+        }
+        
+        .stack-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1.1rem;
+            color: var(--text-body);
+        }
+        
+        .stack-item:last-child { border-bottom: none; }
+        .stack-item .price { font-weight: 700; color: var(--secondary); }
+        
+        .stack-total {
+            display: flex;
+            justify-content: space-between;
+            background: #e2e8f0;
             padding: 15px;
             border-radius: 10px;
-            margin-bottom: 30px;
-            border: 1px solid #fecaca;
+            margin-top: 15px;
             font-weight: 700;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        #countdown {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            display: inline-block;
-            min-width: 120px;
+            color: #475569;
         }
 
-        .price-tag { font-size: 4.5rem; color: var(--primary); font-weight: 800; line-height: 1; margin: 20px 0 10px; }
-        .installments { font-size: 1.3rem; color: var(--text-body); font-weight: 500; margin-bottom: 40px; }
-        .price-old { text-decoration: line-through; color: #94a3b8; font-size: 1.5rem; }
+        .final-price-area {
+            margin-top: 30px;
+        }
+
+        .price-tag { font-size: 4.5rem; color: var(--success); font-weight: 800; line-height: 1; margin: 10px 0; letter-spacing: -2px; }
+        .installments { font-size: 1.3rem; color: var(--text-body); font-weight: 600; margin-bottom: 30px; }
+        .main-price-strike { text-decoration: line-through; color: #ef4444; font-size: 1.5rem; font-weight: 700; opacity: 0.7; }
 
         footer { background-color: var(--secondary); color: #94a3b8; text-align: center; padding: 60px 0; }
 
@@ -198,11 +231,23 @@
             .split-content, .pain-grid, .author-box, .bonus-grid { grid-template-columns: 1fr; gap: 40px; }
             .author-box { flex-direction: column; text-align: center; }
             .price-tag { font-size: 3.5rem; }
-            .btn { width: 100%; padding: 20px; }
+            .sticky-offer { flex-direction: column; gap: 10px; padding: 10px; }
+            .sticky-price { font-size: 1.2rem; }
+            .btn-sticky { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
+
+    <div class="sticky-offer">
+        <div class="sticky-content">
+            <div class="sticky-timer">
+                ⏰ Oferta expira em: <span id="countdown-sticky">15:00</span>
+            </div>
+            <div class="sticky-price">Só R$ 54,90</div>
+        </div>
+        <a href="https://pay.hotmart.com/O101307592F" class="btn-sticky">QUERO APROVEITAR</a>
+    </div>
 
     <header class="hero">
         <div class="container">
@@ -287,7 +332,7 @@
                 <div class="bonus-card">
                     <span class="bonus-tag">BÔNUS #1</span>
                     <img src="print-plano7dias.png" alt="Plano 7 Dias" class="bonus-img">
-                    <h3 class="bonus-title">Plano de 7 Dias</h3>
+                    <h3 class="bonus-title">Plano de 7 Dias: Coluna em Ação</h3>
                     <p class="bonus-desc">Um cronograma diário para você sair da inércia. Exercícios rápidos para cada dia da semana.</p>
                     
                     <div class="bonus-price">
@@ -298,9 +343,9 @@
                 <div class="bonus-card">
                     <span class="bonus-tag">BÔNUS #2</span>
                     <img src="bonus-sono.png" alt="Guia do Sono" class="bonus-img">
-                    <h3 class="bonus-title">Sono e Coluna</h3>
+                    <h3 class="bonus-title">Sono e Coluna Saudável</h3>
                     <p class="bonus-desc">
-                        Aprenda a <strong>Higiene do Sono</strong> para recuperar os músculos enquanto dorme. <br>
+                        Aprenda a <strong>Higiene do Sono</strong> para recuperar o corpo enquanto dorme. <br>
                         <em>Inclui: Checklist Diário + Planner.</em>
                     </p>
 
@@ -315,19 +360,37 @@
     <section class="offer-section" id="oferta">
         <div class="container">
             <div class="offer-box">
+                <h2 style="font-size: 2.2rem; margin-bottom: 10px;">Resumo do seu Pedido:</h2>
+                <p style="color: var(--text-body); margin-bottom: 20px;">Você vai receber acesso imediato a:</p>
                 
-                <div class="timer-bar">
-                    🔥 OFERTA POR TEMPO LIMITADO: <span id="countdown">15:00</span>
+                <div class="value-stack">
+                    <div class="stack-item">
+                        <span>📚 Ebook Guia Coluna Saudável</span>
+                        <span class="price">R$ 97,00</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>🎁 Bônus 1: Plano de 7 Dias</span>
+                        <span class="price">R$ 29,90</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>🎁 Bônus 2: Guia do Sono</span>
+                        <span class="price">R$ 47,90</span>
+                    </div>
+                    
+                    <div class="stack-total">
+                        <span>VALOR TOTAL REAL:</span>
+                        <span style="text-decoration: line-through;">R$ 174,80</span>
+                    </div>
                 </div>
 
-                <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Cuide da sua coluna 24h por dia.</h2>
-                <p style="color: var(--text-body); margin-bottom: 40px; font-size: 1.1rem;">📚 Guia Home Office + 🎁 Plano de Ação + 🎁 Guia do Sono</p>
+                <div class="final-price-area">
+                    <p style="color: #64748b; font-weight: 600; margin-bottom: 5px;">HOJE POR APENAS:</p>
+                    <span class="main-price-strike">R$ 97,00</span>
+                    <div class="price-tag">R$ 54,90</div>
+                    <div class="installments">ou em 7x de R$ 8,98 *</div>
+                </div>
                 
-                <span class="price-old">De R$ 97,00 por:</span>
-                <div class="price-tag">R$ 54,90</div>
-                <div class="installments">ou em 7x de R$ 8,98 *</div>
-                
-                <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">GARANTIR MEUS BÔNUS AGORA</a>
+                <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">QUERO MEU ACESSO TOTAL</a>
                 
                 <p style="margin-top: 30px; font-size: 0.9rem; color: #94a3b8;">
                     🔒 Pagamento Seguro • Acesso Imediato • 🛡️ 7 Dias de Garantia
@@ -347,7 +410,7 @@
         // Define 15 minutos em segundos
         let time = 15 * 60;
         
-        const countdownElement = document.getElementById('countdown');
+        const countdownElement = document.getElementById('countdown-sticky');
 
         function updateCountdown() {
             const minutes = Math.floor(time / 60);
@@ -355,12 +418,14 @@
 
             seconds = seconds < 10 ? '0' + seconds : seconds;
 
-            countdownElement.innerHTML = `${minutes}:${seconds}`;
+            if(countdownElement) {
+                countdownElement.innerHTML = `${minutes}:${seconds}`;
+            }
 
             if (time > 0) {
                 time--;
             } else {
-                time = 15 * 60; 
+                time = 15 * 60; // Reinicia
             }
         }
 
