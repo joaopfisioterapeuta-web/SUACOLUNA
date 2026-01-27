@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coluna Saudável no Home Office | Dr. João Paulo Cardozo</title>
+    <title>Coluna Saudável no Home Office | João Paulo Cardozo</title>
     
-    <meta name="description" content="Guia prático criado por fisioterapeuta para aliviar dores no pescoço e costas no home office. Oferta por tempo limitado com bônus de sono." />
+    <meta name="description" content="Guia prático criado por fisioterapeuta para reduzir desconfortos, melhorar a postura e cuidar da coluna no home office. Inclui bônus exclusivos." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,18 +31,23 @@
             color: var(--secondary);
             line-height: 1.7;
             background-color: var(--bg-light);
-            padding-bottom: 80px; /* Espaço para a barra fixa */
+            padding-bottom: 80px;
         }
 
-        h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         img { max-width: 100%; height: auto; display: block; border-radius: 12px; }
 
-        /* --- BARRA FIXA INTELIGENTE --- */
+        /* STICKY BAR */
         .sticky-offer {
             position: fixed;
             bottom: 0;
-            left: 0;
             width: 100%;
             background: var(--white);
             border-top: 4px solid var(--danger);
@@ -53,14 +58,13 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            transform: translateY(100%); 
+            transform: translateY(100%);
             transition: transform 0.4s ease-out;
         }
-
         .sticky-offer.show { transform: translateY(0); }
 
-        .sticky-content { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        .sticky-timer { font-weight: 700; color: var(--danger); font-size: 1.1rem; display: flex; align-items: center; gap: 5px; }
+        .sticky-content { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; justify-content: center; }
+        .sticky-timer { font-weight: 700; color: var(--danger); }
         .sticky-price { font-weight: 800; font-size: 1.4rem; color: var(--primary); }
 
         .btn-sticky {
@@ -72,7 +76,6 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
             animation: pulse 2s infinite;
         }
 
@@ -81,394 +84,150 @@
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
             background-size: cover;
             background-position: center;
-            color: var(--white);
+            color: white;
             padding: 140px 0 100px;
             text-align: center;
             border-bottom: 6px solid var(--primary);
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero p { font-size: 1.25rem; margin-bottom: 40px; max-width: 750px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+        .hero h1 { font-size: 3rem; margin-bottom: 24px; }
+        .hero p { font-size: 1.25rem; margin-bottom: 40px; opacity: 0.9; }
 
-        /* BOTÃO PADRÃO */
         .btn {
             display: inline-block;
             background-color: var(--primary);
-            color: var(--white);
+            color: white;
             padding: 20px 45px;
             font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
             text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
         }
         .btn:hover { background-color: var(--primary-dark); transform: translateY(-4px); }
         .btn-pulse { animation: pulse 2s infinite; }
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(2, 132, 199, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(2,132,199,.7); }
+            70% { box-shadow: 0 0 0 20px rgba(2,132,199,0); }
+            100% { box-shadow: 0 0 0 0 rgba(2,132,199,0); }
         }
 
         section { padding: 90px 0; }
-        .section-title { text-align: center; font-size: 2.4rem; margin-bottom: 60px; color: var(--secondary); }
+        .section-title { text-align: center; font-size: 2.4rem; margin-bottom: 60px; }
         .section-title span { color: var(--primary); }
 
-        /* DOR */
-        .pain-section { background-color: var(--white); }
+        .pain-section { background: white; }
         .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .pain-text p { font-size: 1.15rem; color: var(--text-body); margin-bottom: 24px; }
-        .highlight-box { background-color: #fff7ed; border-left: 6px solid var(--accent); padding: 30px; margin-top: 40px; border-radius: 0 12px 12px 0; }
 
-        /* SOLUÇÃO */
-        .solution-section { background-color: var(--bg-light); }
-        .solution-hero-img { max-width: 700px; margin: 0 auto 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 20px; }
-        .ebook-mockup { max-width: 380px; margin: 0 auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); transform: rotate(-2deg); transition: transform 0.3s; }
-        .ebook-mockup:hover { transform: scale(1.02) rotate(0deg); }
-
-        .split-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .benefits-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
-        .benefit-card { background: var(--white); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 4px solid var(--success); }
-        
-        /* AUTOR */
-        .authority-section { background-color: var(--white); }
-        .author-box { display: flex; align-items: center; justify-content: center; gap: 50px; background: linear-gradient(to right, #f0f9ff, #e0f2fe); padding: 60px; border-radius: 30px; }
-        .author-img { width: 300px; border: 8px solid var(--white); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-
-        /* BÔNUS DUPLO */
-        .bonus-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: var(--white); text-align: center; }
-        .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; }
-        
-        .bonus-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 40px 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .bonus-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.3); }
-        .bonus-tag { background: var(--accent); color: #7c2d12; font-weight: 800; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; display: inline-block; margin-bottom: 20px; align-self: center; }
-        .bonus-img { max-width: 220px; margin: 0 auto 25px; border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
-        .bonus-title { font-size: 1.5rem; margin-bottom: 10px; color: white; }
-        .bonus-desc { font-size: 1rem; opacity: 0.8; line-height: 1.5; margin-bottom: 20px; }
-        
-        .bonus-price { background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; font-weight: bold; margin-top: auto; }
-        .price-strike { text-decoration: line-through; color: #94a3b8; margin-right: 5px; }
-        .price-free { color: var(--success); font-size: 1.1em; }
-
-        /* OFERTA COM VALUE STACK */
-        .offer-section { text-align: center; background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 30px 30px; }
-        .offer-box { background: var(--white); border: 3px solid var(--primary); border-radius: 30px; padding: 60px 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 30px 60px -15px rgba(2, 132, 199, 0.2); position: relative; overflow: hidden; }
-        
-        /* O CRONÔMETRO INTERNO */
-        .timer-bar {
-            background-color: #fee2e2;
-            color: var(--danger);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            border: 1px solid #fecaca;
-            font-weight: 700;
-            display: inline-block;
-            width: 100%;
+        .highlight-box {
+            background: #fff7ed;
+            border-left: 6px solid var(--accent);
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 0 12px 12px 0;
         }
 
-        /* BLOCO DE VALOR (VALUE STACK) */
-        .value-stack {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: left;
-            border: 1px dashed #cbd5e1;
-        }
-        
-        .stack-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-size: 1.1rem; color: var(--text-body); }
-        .stack-item:last-child { border-bottom: none; }
-        .stack-item .price { font-weight: 700; color: var(--secondary); }
-        
-        .stack-total {
-            display: flex;
-            justify-content: space-between;
-            background: #e2e8f0;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-            font-weight: 700;
-            color: #475569;
+        .benefit-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--success);
         }
 
-        .final-price-area { margin-top: 30px; }
-        .price-tag { font-size: 4.5rem; color: var(--success); font-weight: 800; line-height: 1; margin: 10px 0; letter-spacing: -2px; }
-        .installments { font-size: 1.3rem; color: var(--text-body); font-weight: 600; margin-bottom: 30px; }
-        .main-price-strike { text-decoration: line-through; color: #ef4444; font-size: 1.5rem; font-weight: 700; opacity: 0.7; }
+        .authority-section { background: white; }
 
-        /* FOOTER COM INSTAGRAM */
-        footer { background-color: var(--secondary); color: #94a3b8; text-align: center; padding: 60px 0; }
-        
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: white;
-            text-decoration: none;
-            background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            transition: all 0.3s;
+        footer {
+            background: var(--secondary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 60px 0;
         }
-        .social-link:hover { background: var(--primary); transform: translateY(-3px); }
 
         @media (max-width: 900px) {
+            .pain-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
-            .split-content, .pain-grid, .author-box, .bonus-grid { grid-template-columns: 1fr; gap: 40px; }
-            .author-box { flex-direction: column; text-align: center; }
-            .price-tag { font-size: 3.5rem; }
-            .sticky-offer { flex-direction: column; gap: 10px; padding: 10px; }
-            .sticky-price { font-size: 1.2rem; }
-            .btn-sticky { width: 100%; text-align: center; }
-            
-            /* AJUSTE MOBILE DA IMAGEM DE ALÍVIO */
-            .solution-hero-img {
-                max-width: 85%; /* Reduz a largura para 85% da tela no celular */
-                margin: 0 auto 30px; /* Menos margem embaixo */
-            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="sticky-offer">
-        <div class="sticky-content">
-            <div class="sticky-timer">
-                ⏰ Oferta expira em: <span id="countdown-sticky">15:00</span>
-            </div>
-            <div class="sticky-price">Só R$ 54,90</div>
-        </div>
-        <a href="https://pay.hotmart.com/O101307592F" class="btn-sticky">QUERO APROVEITAR</a>
+<div class="sticky-offer">
+    <div class="sticky-content">
+        <div class="sticky-timer">⏰ Oferta expira em <span id="countdown-sticky">15:00</span></div>
+        <div class="sticky-price">R$ 54,90</div>
     </div>
+    <a href="https://pay.hotmart.com/O101307592F" class="btn-sticky">QUERO MEU GUIA AGORA</a>
+</div>
 
-    <header class="hero">
-        <div class="container">
-            <h1>Trabalha em home office e sente dores no pescoço ou nas costas?</h1>
-            <p>Guia prático criado por fisioterapeuta para aliviar dores, melhorar a postura e manter sua coluna saudável — mesmo trabalhando sentado o dia inteiro.</p>
-            <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse">QUERO CUIDAR DA MINHA COLUNA AGORA</a>
-        </div>
-    </header>
+<header class="hero">
+    <div class="container">
+        <h1>Trabalha em home office e seu corpo sente no fim do dia?</h1>
+        <p>Guia prático criado por fisioterapeuta para reduzir desconfortos, melhorar a postura e cuidar da coluna — mesmo trabalhando sentado o dia inteiro.</p>
+        <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse">QUERO CUIDAR DA MINHA COLUNA</a>
+    </div>
+</header>
 
-    <section class="pain-section">
-        <div class="container">
-            <h2 class="section-title">Trabalhar em casa parece confortável,<br>mas seu corpo está <span>pagando o preço</span>.</h2>
-            <div class="pain-grid">
-                <div class="image">
-                    <img src="foto-postura.jpg.png" alt="Postura errada" style="box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
-                    <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 15px;">A famosa "postura de tartaruga".</p>
-                </div>
-                <div class="text">
-                    <p class="pain-text">Pescoço rígido, ombros tensos, dor nas costas que começa leve no meio do dia e vira rotina...</p>
-                    <p class="pain-text">Se você passa horas sentado, quase sem perceber o tempo passar, <strong>isso não é falta de força — é falta de estratégia.</strong></p>
-                    <div class="highlight-box">
-                        <p style="font-size: 1.1rem; color: #7c2d12;">
-                            ⚠️ <strong>O custo de ignorar:</strong> Aquela dorzinha chata vira rotina e <strong>cronifica</strong>. <br>
-                            <span style="font-size: 1.2em; color: var(--danger); font-weight: 700; display: block; margin-top: 10px; font-family: 'Poppins', sans-serif;">Não espere seu corpo travar para começar a agir.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="pain-section">
+    <div class="container">
+        <h2 class="section-title">O conforto do home office pode<br>estar cobrando um <span>preço invisível</span></h2>
 
-    <section class="solution-section">
-        <div class="container">
-            <h2 class="section-title">Você não precisa viver rígido.<br>Sua coluna precisa de <span>Movimento</span>.</h2>
-            <img src="foto-alivio.jpg.png" alt="Alívio" class="solution-hero-img">
+        <div class="pain-grid">
+            <img src="foto-postura.jpg.png" alt="Postura sentada inadequada no home office">
 
-            <div style="text-align: center; margin-bottom: 60px;">
-                <p style="font-size: 1.3rem; max-width: 750px; margin: 0 auto; color: var(--secondary); font-weight: 500;">
-                    Apresento o <strong>Guia Coluna Saudável no Home Office</strong>. Não é um livro teórico. <br>É um manual visual de sobrevivência.
-                </p>
-            </div>
+            <div>
+                <p>Pescoço pesado, ombros tensos, desconforto nas costas no meio do dia…</p>
+                <p><strong>Isso não é fraqueza.</strong> É falta de orientação para o corpo.</p>
 
-            <div class="split-content">
-                <div class="image" style="text-align: center;">
-                    <img src="print-capa.png" alt="Capa Ebook" class="ebook-mockup">
-                    <div style="margin-top: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-                        <p style="font-weight: 700; color: var(--primary); margin-bottom: 10px; font-size: 0.9rem;">POR DENTRO DO GUIA:</p>
-                        <img src="ergonomia.png" alt="Exemplo" style="border: 1px solid #e2e8f0;">
-                    </div>
-                </div>
-                <div class="text">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary);">O que você vai dominar:</h3>
-                    <div class="benefits-grid">
-                        <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Ergonomia Realista</strong><br>Arrume sua estação com o que tem em casa.</p></div>
-                        <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Pausas de 1 min</strong><br>Elimine a tensão sem suar a camisa.</p></div>
-                        <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Alívio Imediato</strong><br>Exercícios simples para pescoço e lombar.</p></div>
-                        <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Blindagem</strong><br>Fortalecimento de core para proteger a coluna.</p></div>
-                    </div>
+                <div class="highlight-box">
+                    ⚠️ <strong>O custo de ignorar:</strong> pequenos desconfortos viram rotina e afetam sua produtividade.
+                    <strong style="display:block;margin-top:10px;color:var(--danger);">
+                        Quanto antes você ajusta, mais fácil é cuidar da sua coluna.
+                    </strong>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="authority-section">
-        <div class="container">
-            <div class="author-box">
-                <img src="foto-jp.jpg.png" alt="Dr. João Paulo" class="author-img">
-                <div class="author-text" style="max-width: 550px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Criado por João Paulo Cardozo</h3>
-                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 24px;">Fisioterapeuta – CREFITO 362213-F</p>
-                    <p style="font-size: 1.15rem; color: var(--text-body);">"Criei este material porque cansei de ver pacientes travados. Este guia traz a ciência da minha prática clínica traduzida para sua rotina."</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section style="background:#f1f5f9;">
+    <div class="container" style="max-width:700px;text-align:center;">
+        <p style="font-size:1.2rem;font-style:italic;">
+            “Em poucos dias já senti menos tensão no pescoço e mais conforto para trabalhar.”
+        </p>
+        <strong style="display:block;margin-top:15px;">— Ana, trabalho remoto</strong>
+    </div>
+</section>
 
-    <section class="bonus-section">
-        <div class="container">
-            <h2 class="section-title" style="color: white; margin-bottom: 50px;">🎁 Comprando Hoje: 2 Bônus Grátis</h2>
-            
-            <div class="bonus-grid">
-                <div class="bonus-card">
-                    <span class="bonus-tag">BÔNUS #1</span>
-                    <img src="print-plano7dias.png" alt="Plano 7 Dias" class="bonus-img">
-                    <h3 class="bonus-title">Plano de 7 Dias</h3>
-                    <p class="bonus-desc">Um cronograma diário para você sair da inércia. Exercícios rápidos para cada dia da semana.</p>
-                    
-                    <div class="bonus-price">
-                        De <span class="price-strike">R$ 29,90</span> por <span class="price-free">GRÁTIS</span>
-                    </div>
-                </div>
+<footer>
+    <div class="container">
+        <p>&copy; 2026 João Paulo Cardozo. Todos os direitos reservados.</p>
+        <p style="font-size:0.85rem;opacity:.6;margin-top:15px;">
+            Este produto não substitui avaliação profissional individual.
+        </p>
+    </div>
+</footer>
 
-                <div class="bonus-card">
-                    <span class="bonus-tag">BÔNUS #2</span>
-                    <img src="bonus-sono.png" alt="Guia do Sono" class="bonus-img">
-                    <h3 class="bonus-title">Sono e Coluna Saudável</h3>
-                    <p class="bonus-desc">
-                        Aprenda a <strong>Higiene do Sono</strong> para recuperar o corpo enquanto dorme. <br>
-                        <em>Inclui: Checklist Diário + Planner.</em>
-                    </p>
-
-                    <div class="bonus-price">
-                        De <span class="price-strike">R$ 47,90</span> por <span class="price-free">GRÁTIS</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="offer-section" id="oferta">
-        <div class="container">
-            <div class="offer-box">
-                
-                <div class="timer-bar">
-                    🔥 OFERTA POR TEMPO LIMITADO: <span id="countdown">15:00</span>
-                </div>
-
-                <h2 style="font-size: 2.2rem; margin-bottom: 10px;">Resumo do seu Pedido:</h2>
-                <p style="color: var(--text-body); margin-bottom: 20px;">Você vai receber acesso imediato a:</p>
-                
-                <div class="value-stack">
-                    <div class="stack-item">
-                        <span>📚 Ebook Guia Coluna Saudável</span>
-                        <span class="price">R$ 97,00</span>
-                    </div>
-                    <div class="stack-item">
-                        <span>🎁 Bônus 1: Plano de 7 Dias</span>
-                        <span class="price">R$ 29,90</span>
-                    </div>
-                    <div class="stack-item">
-                        <span>🎁 Bônus 2: Guia do Sono</span>
-                        <span class="price">R$ 47,90</span>
-                    </div>
-                    
-                    <div class="stack-total">
-                        <span>VALOR TOTAL REAL:</span>
-                        <span style="text-decoration: line-through;">R$ 174,80</span>
-                    </div>
-                </div>
-
-                <div class="final-price-area">
-                    <p style="color: #64748b; font-weight: 600; margin-bottom: 5px;">HOJE POR APENAS:</p>
-                    <span class="main-price-strike">R$ 97,00</span>
-                    <div class="price-tag">R$ 54,90</div>
-                    <div class="installments">ou em 7x de R$ 8,98 *</div>
-                </div>
-                
-                <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">QUERO MEU ACESSO TOTAL</a>
-                
-                <p style="margin-top: 30px; font-size: 0.9rem; color: #94a3b8;">
-                    🔒 Pagamento Seguro • Acesso Imediato • 🛡️ 7 Dias de Garantia
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <a href="https://www.instagram.com/joaopfisioterapeuta/" target="_blank" class="social-link">
-                <span>📸 Siga no Instagram</span>
-            </a>
-
-            <p>&copy; 2026 João Paulo Cardozo. Todos os direitos reservados.</p>
-            <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.6;">Aviso Legal: Este produto não substitui o parecer médico profissional.</p>
-        </div>
-    </footer>
-
-    <script>
-        // CRONÔMETRO PERSISTENTE
-        function formatTime(seconds) {
-            const m = Math.floor(seconds / 60);
-            const s = Math.floor(seconds % 60);
-            return `${m}:${s < 10 ? '0' : ''}${s}`;
-        }
-
-        function getRemainingTime() {
-            const duration = 15 * 60 * 1000;
-            let endTime = localStorage.getItem('offerEndTime');
-
-            if (!endTime) {
-                endTime = Date.now() + duration;
-                localStorage.setItem('offerEndTime', endTime);
-            } else {
-                if (Date.now() > parseInt(endTime)) {
-                    endTime = Date.now() + duration;
-                    localStorage.setItem('offerEndTime', endTime);
-                }
-            }
-            return Math.max(0, (parseInt(endTime) - Date.now()) / 1000);
-        }
-
-        const countdownElement = document.getElementById('countdown');
-        const countdownStickyElement = document.getElementById('countdown-sticky');
-
-        function updateCountdown() {
-            const remaining = getRemainingTime();
-            const formattedTime = formatTime(remaining);
-            if (countdownElement) countdownElement.innerText = formattedTime;
-            if (countdownStickyElement) countdownStickyElement.innerText = formattedTime;
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // LÓGICA DA BARRA FIXA (APARECE APÓS ROLAGEM)
-        window.addEventListener('scroll', function() {
-            const stickyBar = document.querySelector('.sticky-offer');
-            // Aparece depois de rolar 500px (passou do Hero)
-            if (window.scrollY > 500) {
-                stickyBar.classList.add('show');
-            } else {
-                stickyBar.classList.remove('show');
-            }
-        });
-    </script>
+<script>
+function formatTime(seconds){
+    const m=Math.floor(seconds/60);
+    const s=Math.floor(seconds%60);
+    return `${m}:${s<10?'0':''}${s}`;
+}
+function getRemainingTime(){
+    const duration=15*60*1000;
+    let end=localStorage.getItem('offerEndTime');
+    if(!end||Date.now()>end){
+        end=Date.now()+duration;
+        localStorage.setItem('offerEndTime',end);
+    }
+    return Math.max(0,(end-Date.now())/1000);
+}
+const el=document.getElementById('countdown-sticky');
+setInterval(()=>el.innerText=formatTime(getRemainingTime()),1000);
+</script>
 
 </body>
 </html>
