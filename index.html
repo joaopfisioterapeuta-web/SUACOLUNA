@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coluna Saudável no Home Office | Dr. João Paulo Cardozo</title>
     
-    <meta name="description" content="Guia prático criado por fisioterapeuta para reduzir desconfortos e cuidar da coluna no home office. Oferta por tempo limitado." />
+    <meta name="description" content="Guia prático criado por fisioterapeuta para aliviar dores no pescoço e costas no home office. Oferta por tempo limitado com bônus de sono." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,9 +91,10 @@
             animation: pulse 2s infinite;
         }
 
-        /* HERO */
+        /* HERO - AJUSTE DE LUZ AQUI */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
+            /* Mudei a opacidade de 0.85/0.9 para 0.65/0.8. Mais claro! */
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.8)), url('foto-dor.jpg.png');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -101,8 +102,8 @@
             text-align: center;
             border-bottom: 6px solid var(--primary);
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero p { font-size: 1.25rem; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+        .hero h1 { font-size: 3rem; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.25rem; margin-bottom: 40px; max-width: 750px; margin-left: auto; margin-right: auto; opacity: 1; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
 
         /* BOTÃO PADRÃO */
         .btn {
@@ -146,18 +147,6 @@
         .benefits-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
         .benefit-card { background: var(--white); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 4px solid var(--success); }
         
-        /* DEPOIMENTO (NOVO) */
-        .testimonial-simple {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            max-width: 700px;
-            margin: 60px auto 0; /* Espaço antes e depois */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
         /* AUTOR */
         .authority-section { background-color: var(--white); }
         .author-box { display: flex; align-items: center; justify-content: center; gap: 50px; background: linear-gradient(to right, #f0f9ff, #e0f2fe); padding: 60px; border-radius: 30px; }
@@ -279,13 +268,13 @@
             </div>
             <div class="sticky-price">Só R$ 54,90</div>
         </div>
-        <a href="https://pay.hotmart.com/O101307592F" class="btn-sticky">QUERO MEU GUIA AGORA</a>
+        <a href="https://pay.hotmart.com/O101307592F" class="btn-sticky">QUERO APROVEITAR</a>
     </div>
 
     <header class="hero">
         <div class="container">
-            <h1>Trabalha em home office e seu corpo sente no fim do dia?</h1>
-            <p>Guia prático criado por fisioterapeuta para reduzir desconfortos, melhorar a postura e cuidar da coluna — mesmo trabalhando sentado o dia inteiro.</p>
+            <h1>Trabalha em home office e sente dores no pescoço ou nas costas?</h1>
+            <p>Guia prático criado por fisioterapeuta para aliviar dores, melhorar a postura e manter sua coluna saudável — mesmo trabalhando sentado o dia inteiro.</p>
             <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse">QUERO CUIDAR DA MINHA COLUNA AGORA</a>
         </div>
     </header>
@@ -301,11 +290,10 @@
                 <div class="text">
                     <p class="pain-text">Pescoço rígido, ombros tensos, dor nas costas que começa leve no meio do dia e vira rotina...</p>
                     <p class="pain-text">Se você passa horas sentado, quase sem perceber o tempo passar, <strong>isso não é falta de força — é falta de estratégia.</strong></p>
-                    
                     <div class="highlight-box">
                         <p style="font-size: 1.1rem; color: #7c2d12;">
-                            ⚠️ <strong>O custo de ignorar:</strong> pequenos desconfortos viram rotina e afetam sua produtividade. <br>
-                            <span style="font-size: 1.2em; color: var(--danger); font-weight: 700; display: block; margin-top: 10px; font-family: 'Poppins', sans-serif;">Quanto antes você ajusta, mais fácil é cuidar da sua coluna.</span>
+                            ⚠️ <strong>O custo de ignorar:</strong> Aquela dorzinha chata vira rotina e <strong>cronifica</strong>. <br>
+                            <span style="font-size: 1.2em; color: var(--danger); font-weight: 700; display: block; margin-top: 10px; font-family: 'Poppins', sans-serif;">Não espere seu corpo travar para começar a agir.</span>
                         </p>
                     </div>
                 </div>
@@ -334,35 +322,21 @@
                 </div>
                 <div class="text">
                     <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary);">O que você vai dominar:</h3>
-                    
                     <div class="benefits-grid">
                         <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Ergonomia Realista</strong><br>Arrume sua estação com o que tem em casa.</p></div>
                         <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Pausas de 1 min</strong><br>Elimine a tensão sem suar a camisa.</p></div>
                         <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Alívio Imediato</strong><br>Exercícios simples para pescoço e lombar.</p></div>
-                        
-                        <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Fortalecimento Funcional da Coluna</strong><br>Exercícios simples para dar mais suporte, estabilidade e resistência à coluna no dia a dia.</p></div>
+                        <div class="benefit-card"><p><strong><span class="check-icon">✔️</span> Blindagem</strong><br>Fortalecimento de core para proteger a coluna.</p></div>
                     </div>
                 </div>
             </div>
-
-            <div class="testimonial-simple">
-                <p style="font-size: 1.25rem; font-style: italic; color: #475569; margin-bottom: 10px;">"Em poucos dias já senti menos tensão no pescoço e mais conforto para trabalhar."</p>
-                <p style="font-weight: 700; color: var(--primary);">— Ana, trabalho remoto</p>
-            </div>
-
-            <div style="text-align:center; margin-top:50px;">
-              <a href="https://pay.hotmart.com/O101307592F" class="btn">
-                QUERO COMEÇAR A CUIDAR DA MINHA COLUNA
-              </a>
-            </div>
-
         </div>
     </section>
 
     <section class="authority-section">
         <div class="container">
             <div class="author-box">
-                <img src="foto-jp.jpg.png" alt="João Paulo Cardozo, fisioterapeuta especializado em postura" class="author-img">
+                <img src="foto-jp.jpg.png" alt="Dr. João Paulo" class="author-img">
                 <div class="author-text" style="max-width: 550px;">
                     <h3 style="font-size: 2rem; margin-bottom: 10px;">Criado por João Paulo Cardozo</h3>
                     <p style="color: var(--primary); font-weight: 700; margin-bottom: 24px;">Fisioterapeuta – CREFITO 362213-F</p>
