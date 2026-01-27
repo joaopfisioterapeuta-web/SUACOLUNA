@@ -7,101 +7,100 @@
     
     <meta name="description" content="Guia prático criado por fisioterapeuta para aliviar dores no pescoço e costas no home office. Exercícios simples, pausas ativas e plano de 7 dias." />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            /* Cores Profissionais */
-            --primary: #0284c7; /* Azul Fisioterapia */
-            --primary-dark: #0369a1;
-            --secondary: #0f172a; /* Texto Escuro */
-            --bg-light: #f8fafc;
-            --accent: #f59e0b; /* Laranja para destaque */
+            /* Paleta de Cores Refinada */
+            --primary: #0284c7;      /* Azul Fisioterapia Vibrante */
+            --primary-dark: #0369a1; /* Azul Profundo para Hover */
+            --secondary: #1e293b;    /* Texto Cinza Azulado (Mais suave que preto) */
+            --text-body: #475569;    /* Texto de leitura confortável */
+            --bg-light: #f8fafc;     /* Fundo Gelo */
             --white: #ffffff;
-            --success: #16a34a;
+            --accent: #f59e0b;       /* Laranja para detalhes */
+            --success: #16a34a;      /* Verde Sucesso */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
+            font-family: 'Inter', sans-serif; /* Fonte de Leitura */
             color: var(--secondary);
-            line-height: 1.6;
+            line-height: 1.7; /* Mais respiro entre linhas */
             background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased; /* Texto mais nítido */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif; /* Fonte de Títulos */
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px; /* Títulos mais compactos e modernos */
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px; /* Um pouco mais largo para telas modernas */
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            border-radius: 16px; /* Bordas mais arredondadas e modernas */
         }
 
-        /* --- TRUQUE PARA CORTAR O SÍMBOLO DA IA --- */
-        
-        /* 1. A moldura que esconde o que vaza para fora */
-        .crop-container {
-            overflow: hidden; 
-            border-radius: 12px;
-            position: relative;
-        }
-
-        /* 2. O zoom que empurra o símbolo para fora da moldura */
-        .crop-ia {
-            transform: scale(1.08); /* Aumenta 8% para cortar as bordas */
-            transform-origin: center;
-            object-fit: cover;
-        }
-
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (TOPO) --- */
         .hero {
-            /* AQUI: Dei um zoom no background (110%) para cortar as bordas da imagem de fundo */
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
-            background-size: 110%; /* Zoom para cortar bordas */
+            /* Fundo mais escuro para garantir leitura perfeita do texto branco */
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
+            background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 100px 0;
+            padding: 120px 0 100px; /* Mais espaço vertical */
             text-align: center;
-            border-bottom: 5px solid var(--primary);
+            border-bottom: 6px solid var(--primary);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 800;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-size: 3rem; /* Título maior */
+            margin-bottom: 24px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            max-width: 800px;
+            font-size: 1.25rem;
+            margin-bottom: 48px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.95;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            opacity: 0.9;
+            font-weight: 400;
         }
 
-        /* --- BOTÕES --- */
+        /* --- BOTÕES PREMIUM --- */
         .btn {
             display: inline-block;
             background-color: var(--primary);
             color: var(--white);
-            padding: 20px 45px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            padding: 22px 48px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4); /* Sombra difusa moderna */
             border: none;
             cursor: pointer;
             text-transform: uppercase;
@@ -110,8 +109,8 @@
 
         .btn:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(2, 132, 199, 0.5);
         }
 
         .btn-pulse {
@@ -126,15 +125,20 @@
 
         /* --- SEÇÕES GERAIS --- */
         section {
-            padding: 80px 0;
+            padding: 100px 0; /* Mais respiro entre seções */
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
+            font-size: 2.4rem;
+            margin-bottom: 60px;
             color: var(--secondary);
-            font-weight: 700;
+        }
+        
+        /* Highlight na palavra chave do título */
+        .section-title span {
+            color: var(--primary);
+            position: relative;
         }
 
         /* --- DOR & POSTURA --- */
@@ -143,74 +147,76 @@
         }
 
         .split-content {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Grid moderno 50/50 */
             align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .split-content .text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .split-content .image {
-            flex: 1;
-            min-width: 300px;
+            gap: 60px;
         }
 
         .pain-text {
-            font-size: 1.2rem;
-            color: #475569;
-            margin-bottom: 20px;
+            font-size: 1.15rem;
+            color: var(--text-body);
+            margin-bottom: 24px;
         }
 
         .highlight-box {
             background-color: #fff7ed;
             border-left: 6px solid var(--accent);
-            padding: 25px;
-            margin-top: 30px;
-            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         /* --- SOLUÇÃO (EBOOK) --- */
         .solution-section {
             background-color: var(--bg-light);
-            text-align: center;
+        }
+
+        .solution-hero-img {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 20px;
         }
 
         .ebook-mockup {
-            max-width: 350px;
-            margin: 0 auto 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            transform: rotate(-2deg);
+            max-width: 380px;
+            margin: 0 auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); /* Sombra mais realista no PNG */
             transition: transform 0.3s;
         }
         
         .ebook-mockup:hover {
-            transform: rotate(0deg) scale(1.02);
+            transform: scale(1.02) rotate(-1deg);
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            text-align: left;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .benefit-card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Sombra super leve */
             border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
         }
 
         .check-icon {
             color: var(--success);
             font-size: 1.4rem;
-            margin-right: 10px;
+            margin-right: 8px;
+            vertical-align: middle;
         }
 
         /* --- AUTORIDADE --- */
@@ -222,79 +228,83 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            background: #f0f9ff;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #bae6fd;
-            overflow: hidden; /* Importante para cortar a imagem do autor */
+            gap: 50px;
+            background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.05);
         }
 
         .author-img {
-            width: 280px;
-            /* box-shadow removido aqui pois o container já corta, se precisar ajuste */
-            object-fit: cover;
+            width: 300px;
+            border: 8px solid var(--white);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         /* --- BÔNUS --- */
         .bonus-section {
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Fundo escuro premium */
             color: var(--white);
             text-align: center;
         }
 
         .bonus-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05); /* Efeito vidro */
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             max-width: 800px;
             margin: 0 auto;
         }
 
         .bonus-img {
-            max-width: 250px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            max-width: 280px;
+            margin: 0 auto 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.2);
         }
 
         /* --- OFERTA --- */
         .offer-section {
             text-align: center;
-            padding: 100px 0;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 30px 30px; /* Padrão de pontos sutil no fundo */
         }
 
         .offer-box {
             background: var(--white);
-            border: 3px solid var(--primary);
-            border-radius: 25px;
-            padding: 60px 30px;
-            max-width: 650px;
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            padding: 80px 40px;
+            max-width: 700px;
             margin: 0 auto;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 30px 60px -15px rgba(2, 132, 199, 0.2);
         }
 
         .price-tag {
-            font-size: 4rem;
+            font-size: 4.5rem;
             color: var(--primary);
             font-weight: 800;
+            font-family: 'Poppins', sans-serif;
             line-height: 1;
-            margin: 15px 0 5px;
+            margin: 20px 0 10px;
+            letter-spacing: -2px;
         }
         
         .installments {
-            font-size: 1.2rem;
-            color: #475569;
-            font-weight: 600;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            color: var(--text-body);
+            font-weight: 500;
+            margin-bottom: 40px;
         }
 
         .price-old {
             text-decoration: line-through;
             color: #94a3b8;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 500;
         }
 
         /* --- FOOTER --- */
@@ -302,18 +312,18 @@
             background-color: var(--secondary);
             color: #94a3b8;
             text-align: center;
-            padding: 50px 0;
-            font-size: 0.9rem;
+            padding: 60px 0;
+            font-size: 0.95rem;
         }
 
         /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .hero { padding: 60px 0; }
-            .hero h1 { font-size: 2rem; }
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.2rem; }
             .section-title { font-size: 1.8rem; }
-            .split-content { flex-direction: column; }
-            .author-box { flex-direction: column; text-align: center; }
-            .price-tag { font-size: 3rem; }
+            .split-content { grid-template-columns: 1fr; gap: 40px; }
+            .author-box { flex-direction: column; padding: 40px; text-align: center; }
+            .price-tag { font-size: 3.5rem; }
+            .btn { width: 100%; padding: 20px; }
         }
     </style>
 </head>
@@ -329,14 +339,12 @@
 
     <section class="pain-section">
         <div class="container">
-            <h2 class="section-title">Trabalhar em casa parece confortável,<br>mas seu corpo está pagando o preço.</h2>
+            <h2 class="section-title">Trabalhar em casa parece confortável,<br>mas seu corpo está <span>pagando o preço</span>.</h2>
             
             <div class="split-content">
                 <div class="image">
-                    <div class="crop-container">
-                        <img src="foto-postura.jpg.png" alt="Postura errada no computador" class="crop-ia">
-                    </div>
-                    <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 10px;">A famosa "postura de tartaruga" que gera dores crônicas.</p>
+                    <img src="foto-postura.jpg.png" alt="Postura errada no computador" style="box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
+                    <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 15px; font-weight: 500;">A famosa "postura de tartaruga" que gera dores crônicas.</p>
                 </div>
                 <div class="text">
                     <p class="pain-text">
@@ -348,8 +356,10 @@
                     </p>
 
                     <div class="highlight-box">
-                        <p>⚠️ <strong>O custo de ignorar:</strong> Dor que vira rotina, queda de foco e medo de travar a coluna. Mas lembre-se: <br>
-                        <span style="font-size: 1.4em; color: var(--primary); font-weight: bold; display: block; margin-top: 10px;">"A melhor postura é sempre a próxima."</span></p>
+                        <p style="font-size: 1.1rem; color: #7c2d12;">
+                            ⚠️ <strong>O custo de ignorar:</strong> Dor que vira rotina, queda de foco e medo de travar a coluna. Mas lembre-se: <br>
+                            <span style="font-size: 1.4em; color: var(--primary); font-weight: 700; display: block; margin-top: 15px; font-family: 'Poppins', sans-serif;">"A melhor postura é sempre a próxima."</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -358,24 +368,28 @@
 
     <section class="solution-section">
         <div class="container">
-            <h2 class="section-title">Você não precisa viver rígido.<br>Sua coluna precisa de <span style="color: var(--primary);">Movimento</span>.</h2>
+            <h2 class="section-title">Você não precisa viver rígido.<br>Sua coluna precisa de <span>Movimento</span>.</h2>
             
-            <div class="crop-container" style="max-width: 600px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <img src="foto-alivio.jpg.png" alt="Alívio e alongamento" class="crop-ia">
+            <img src="foto-alivio.jpg.png" alt="Alívio e alongamento" class="solution-hero-img">
+
+            <div style="text-align: center; margin-bottom: 60px;">
+                <p style="font-size: 1.3rem; max-width: 750px; margin: 0 auto; color: var(--secondary); font-weight: 500;">
+                    Apresento o <strong>Guia Coluna Saudável no Home Office</strong>. Não é um livro teórico. <br>É um manual visual de sobrevivência para quem trabalha sentado.
+                </p>
             </div>
 
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 50px;">
-                Apresento o <strong>Guia Coluna Saudável no Home Office</strong>. Não é um livro teórico. É um manual visual de sobrevivência para quem trabalha sentado.
-            </p>
-
             <div class="split-content">
-                <div class="image">
+                <div class="image" style="text-align: center;">
                     <img src="print-capa.png" alt="Capa do Ebook" class="ebook-mockup">
                     
-                    <p style="text-align: center; margin-top: 20px; font-weight: bold; color: var(--primary);">Por dentro do Guia:</p>
-                    <img src="impressão-ergonomia.png" alt="Exemplo de Ergonomia" style="margin-top: 10px; border: 1px solid #ccc; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 8px;">
+                    <div style="margin-top: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                        <p style="font-weight: 700; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Visualização do Conteúdo</p>
+                        <img src="impressão-ergonomia.png" alt="Exemplo de Ergonomia" style="border: 1px solid #e2e8f0;">
+                    </div>
                 </div>
                 <div class="text">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary);">O que você vai dominar:</h3>
+                    
                     <div class="benefits-grid">
                         <div class="benefit-card">
                             <p><strong><span class="check-icon">✔️</span> Ergonomia Realista</strong><br>Arrume sua estação de trabalho com o que você já tem em casa.</p>
@@ -398,15 +412,14 @@
     <section class="authority-section">
         <div class="container">
             <div class="author-box">
-                <div class="crop-container" style="border-radius: 15px; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);">
-                    <img src="foto-jp.jpg.png" alt="Dr. João Paulo Cardozo" class="crop-ia author-img">
-                </div>
+                <img src="foto-jp.jpg.png" alt="Dr. João Paulo Cardozo" class="author-img">
                 
-                <div class="author-text" style="max-width: 500px;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Criado por João Paulo Cardozo</h3>
-                    <p style="color: var(--primary); font-weight: bold; margin-bottom: 20px;">Fisioterapeuta – CREFITO 362213-F</p>
-                    <p style="font-size: 1.1rem; color: #475569;">
+                <div class="author-text" style="max-width: 550px;">
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Criado por João Paulo Cardozo</h3>
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 24px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px;">Fisioterapeuta – CREFITO 362213-F</p>
+                    <p style="font-size: 1.15rem; color: var(--text-body);">
                         "Criei este material porque cansei de ver pacientes chegando no meu consultório travados, sendo que 5 minutos de atenção diária evitariam isso. 
+                        <br><br>
                         Este guia traz a ciência da minha prática clínica traduzida de forma simples para sua rotina em casa."
                     </p>
                 </div>
@@ -416,13 +429,13 @@
 
     <section class="bonus-section">
         <div class="container">
-            <h2 class="section-title" style="color: white; margin-bottom: 30px;">🎁 Bônus Exclusivo</h2>
+            <h2 class="section-title" style="color: white; margin-bottom: 40px;">🎁 Bônus Exclusivo</h2>
             
             <div class="bonus-container">
                 <img src="print-plano7dias.png" alt="Plano de 7 Dias" class="bonus-img">
                 
-                <h3 style="font-size: 2rem; margin: 20px 0;">Plano de 7 Dias – Coluna em Ação</h3>
-                <p style="font-size: 1.2rem;">
+                <h3 style="font-size: 2.2rem; margin: 20px 0;">Plano de 7 Dias – Coluna em Ação</h3>
+                <p style="font-size: 1.25rem; opacity: 0.9;">
                     Além do guia completo, você recebe um cronograma passo a passo pronto. <br>
                     <strong>Tudo pensado para você sentir a diferença já na primeira semana.</strong>
                 </p>
@@ -433,16 +446,16 @@
     <section class="offer-section" id="oferta">
         <div class="container">
             <div class="offer-box">
-                <h2 style="font-size: 2rem; margin-bottom: 10px;">Tudo isso por menos do que uma pizza.</h2>
-                <p style="color: #64748b; margin-bottom: 30px;">📚 Ebook Completo + 🎁 Plano de 7 Dias + 🔓 Acesso Vitalício</p>
+                <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Tudo isso por menos do que uma pizza.</h2>
+                <p style="color: var(--text-body); margin-bottom: 40px; font-size: 1.1rem;">📚 Ebook Completo + 🎁 Plano de 7 Dias + 🔓 Acesso Vitalício</p>
                 
                 <span class="price-old">De R$ 97,00 por:</span>
                 <div class="price-tag">R$ 54,90</div>
                 <div class="installments">ou em 7x de R$ 8,98 *</div>
                 
-                <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse" style="width: 100%; display: block;">QUERO COMEÇAR AGORA</a>
+                <a href="https://pay.hotmart.com/O101307592F" class="btn btn-pulse" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">QUERO COMEÇAR AGORA</a>
                 
-                <p style="margin-top: 20px; font-size: 0.9rem; color: #94a3b8;">
+                <p style="margin-top: 30px; font-size: 0.9rem; color: #94a3b8;">
                     🔒 Pagamento Seguro Hotmart • Acesso Imediato via E-mail <br>
                     🛡️ <strong>Garantia de 7 Dias:</strong> Se não gostar, devolvemos seu dinheiro.
                 </p>
@@ -453,7 +466,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 João Paulo Cardozo. Todos os direitos reservados.</p>
-            <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.7;">Aviso Legal: Este produto não substitui o parecer médico profissional.</p>
+            <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.6;">Aviso Legal: Este produto não substitui o parecer médico profissional.</p>
         </div>
     </footer>
 
