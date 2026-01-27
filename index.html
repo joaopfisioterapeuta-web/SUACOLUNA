@@ -31,14 +31,14 @@
             color: var(--secondary);
             line-height: 1.7;
             background-color: var(--bg-light);
-            padding-bottom: 80px; /* Espaço para a barra fixa não cobrir o rodapé */
+            padding-bottom: 80px; /* Espaço para a barra fixa */
         }
 
         h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         img { max-width: 100%; height: auto; display: block; border-radius: 12px; }
 
-        /* --- BARRA FIXA (STICKY BAR) --- */
+        /* --- BARRA FIXA INTELIGENTE --- */
         .sticky-offer {
             position: fixed;
             bottom: 0;
@@ -53,7 +53,14 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            animation: slideUp 0.5s ease-out;
+            /* Começa escondida para baixo */
+            transform: translateY(100%); 
+            transition: transform 0.4s ease-out; /* Animação suave */
+        }
+
+        /* Classe que o Javascript vai adicionar para mostrar a barra */
+        .sticky-offer.show {
+            transform: translateY(0);
         }
 
         .sticky-content {
@@ -91,8 +98,6 @@
             box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
             animation: pulse 2s infinite;
         }
-
-        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
 
         /* HERO */
         .hero {
@@ -425,33 +430,27 @@
     </footer>
 
     <script>
-        // Função para formatar o tempo em MM:SS
+        // CRONÔMETRO PERSISTENTE
         function formatTime(seconds) {
             const m = Math.floor(seconds / 60);
             const s = Math.floor(seconds % 60);
             return `${m}:${s < 10 ? '0' : ''}${s}`;
         }
 
-        // Função para obter o tempo restante
         function getRemainingTime() {
-            const duration = 15 * 60 * 1000; // 15 minutos em milissegundos
+            const duration = 15 * 60 * 1000;
             let endTime = localStorage.getItem('offerEndTime');
 
             if (!endTime) {
-                // Se não houver tempo salvo, define o término para 15 minutos a partir de agora
                 endTime = Date.now() + duration;
                 localStorage.setItem('offerEndTime', endTime);
             } else {
-                // Se houver tempo salvo, verifica se já expirou
                 if (Date.now() > parseInt(endTime)) {
-                    // Se expirou, reseta para 15 minutos a partir de agora (reinicia a oferta)
                     endTime = Date.now() + duration;
                     localStorage.setItem('offerEndTime', endTime);
                 }
             }
-
-            const remaining = parseInt(endTime) - Date.now();
-            return Math.max(0, remaining / 1000); // Retorna em segundos
+            return Math.max(0, (parseInt(endTime) - Date.now()) / 1000);
         }
 
         const countdownElement = document.getElementById('countdown');
@@ -460,13 +459,23 @@
         function updateCountdown() {
             const remaining = getRemainingTime();
             const formattedTime = formatTime(remaining);
-
             if (countdownElement) countdownElement.innerText = formattedTime;
             if (countdownStickyElement) countdownStickyElement.innerText = formattedTime;
         }
 
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Chama imediatamente para não esperar 1 segundo
+        updateCountdown();
+
+        // LÓGICA DA BARRA FIXA (APARECE APÓS ROLAGEM)
+        window.addEventListener('scroll', function() {
+            const stickyBar = document.querySelector('.sticky-offer');
+            // Aparece depois de rolar 500px (passou do Hero)
+            if (window.scrollY > 500) {
+                stickyBar.classList.add('show');
+            } else {
+                stickyBar.classList.remove('show');
+            }
+        });
     </script>
 
 </body>
