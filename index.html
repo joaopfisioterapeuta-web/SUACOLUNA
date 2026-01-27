@@ -16,7 +16,7 @@
             /* Paleta de Cores Refinada */
             --primary: #0284c7;      /* Azul Fisioterapia Vibrante */
             --primary-dark: #0369a1; /* Azul Profundo para Hover */
-            --secondary: #1e293b;    /* Texto Cinza Azulado (Mais suave que preto) */
+            --secondary: #1e293b;    /* Texto Cinza Azulado */
             --text-body: #475569;    /* Texto de leitura confortável */
             --bg-light: #f8fafc;     /* Fundo Gelo */
             --white: #ffffff;
@@ -31,22 +31,22 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif; /* Fonte de Leitura */
+            font-family: 'Inter', sans-serif;
             color: var(--secondary);
-            line-height: 1.7; /* Mais respiro entre linhas */
+            line-height: 1.7;
             background-color: var(--bg-light);
-            -webkit-font-smoothing: antialiased; /* Texto mais nítido */
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3 {
-            font-family: 'Poppins', sans-serif; /* Fonte de Títulos */
+            font-family: 'Poppins', sans-serif;
             font-weight: 700;
             line-height: 1.2;
-            letter-spacing: -0.5px; /* Títulos mais compactos e modernos */
+            letter-spacing: -0.5px;
         }
 
         .container {
-            max-width: 1100px; /* Um pouco mais largo para telas modernas */
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -55,23 +55,22 @@
             max-width: 100%;
             height: auto;
             display: block;
-            border-radius: 16px; /* Bordas mais arredondadas e modernas */
+            border-radius: 16px;
         }
 
         /* --- HERO SECTION (TOPO) --- */
         .hero {
-            /* Fundo mais escuro para garantir leitura perfeita do texto branco */
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 120px 0 100px; /* Mais espaço vertical */
+            padding: 120px 0 100px;
             text-align: center;
             border-bottom: 6px solid var(--primary);
         }
 
         .hero h1 {
-            font-size: 3rem; /* Título maior */
+            font-size: 3rem;
             margin-bottom: 24px;
             max-width: 900px;
             margin-left: auto;
@@ -100,7 +99,7 @@
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4); /* Sombra difusa moderna */
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
             border: none;
             cursor: pointer;
             text-transform: uppercase;
@@ -125,7 +124,7 @@
 
         /* --- SEÇÕES GERAIS --- */
         section {
-            padding: 100px 0; /* Mais respiro entre seções */
+            padding: 100px 0;
         }
 
         .section-title {
@@ -135,7 +134,6 @@
             color: var(--secondary);
         }
         
-        /* Highlight na palavra chave do título */
         .section-title span {
             color: var(--primary);
             position: relative;
@@ -148,7 +146,7 @@
 
         .split-content {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Grid moderno 50/50 */
+            grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 60px;
         }
@@ -183,7 +181,7 @@
         .ebook-mockup {
             max-width: 380px;
             margin: 0 auto;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); /* Sombra mais realista no PNG */
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
             transition: transform 0.3s;
         }
         
@@ -202,7 +200,7 @@
             background: var(--white);
             padding: 24px;
             border-radius: 16px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Sombra super leve */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             border: 1px solid #e2e8f0;
             transition: transform 0.2s;
         }
@@ -243,13 +241,13 @@
 
         /* --- BÔNUS --- */
         .bonus-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Fundo escuro premium */
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--white);
             text-align: center;
         }
 
         .bonus-container {
-            background: rgba(255, 255, 255, 0.05); /* Efeito vidro */
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             padding: 50px;
             border-radius: 24px;
@@ -270,7 +268,7 @@
         .offer-section {
             text-align: center;
             background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-            background-size: 30px 30px; /* Padrão de pontos sutil no fundo */
+            background-size: 30px 30px;
         }
 
         .offer-box {
@@ -384,7 +382,9 @@
                     
                     <div style="margin-top: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
                         <p style="font-weight: 700; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Visualização do Conteúdo</p>
-                        <img src="impressão-ergonomia.png" alt="Exemplo de Ergonomia" style="border: 1px solid #e2e8f0;">
+                        
+                        <img src="ergonomia.png" alt="Exemplo de Ergonomia" style="border: 1px solid #e2e8f0;">
+                        
                     </div>
                 </div>
                 <div class="text">
