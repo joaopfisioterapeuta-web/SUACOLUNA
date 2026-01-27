@@ -53,38 +53,15 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            /* Começa escondida para baixo */
             transform: translateY(100%); 
-            transition: transform 0.4s ease-out; /* Animação suave */
+            transition: transform 0.4s ease-out;
         }
 
-        /* Classe que o Javascript vai adicionar para mostrar a barra */
-        .sticky-offer.show {
-            transform: translateY(0);
-        }
+        .sticky-offer.show { transform: translateY(0); }
 
-        .sticky-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .sticky-timer {
-            font-weight: 700;
-            color: var(--danger);
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .sticky-price {
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--primary);
-        }
+        .sticky-content { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .sticky-timer { font-weight: 700; color: var(--danger); font-size: 1.1rem; display: flex; align-items: center; gap: 5px; }
+        .sticky-price { font-weight: 800; font-size: 1.4rem; color: var(--primary); }
 
         .btn-sticky {
             background-color: var(--success);
@@ -211,15 +188,7 @@
             border: 1px dashed #cbd5e1;
         }
         
-        .stack-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #e2e8f0;
-            font-size: 1.1rem;
-            color: var(--text-body);
-        }
-        
+        .stack-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-size: 1.1rem; color: var(--text-body); }
         .stack-item:last-child { border-bottom: none; }
         .stack-item .price { font-weight: 700; color: var(--secondary); }
         
@@ -234,15 +203,28 @@
             color: #475569;
         }
 
-        .final-price-area {
-            margin-top: 30px;
-        }
-
+        .final-price-area { margin-top: 30px; }
         .price-tag { font-size: 4.5rem; color: var(--success); font-weight: 800; line-height: 1; margin: 10px 0; letter-spacing: -2px; }
         .installments { font-size: 1.3rem; color: var(--text-body); font-weight: 600; margin-bottom: 30px; }
         .main-price-strike { text-decoration: line-through; color: #ef4444; font-size: 1.5rem; font-weight: 700; opacity: 0.7; }
 
+        /* FOOTER COM INSTAGRAM */
         footer { background-color: var(--secondary); color: #94a3b8; text-align: center; padding: 60px 0; }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .social-link:hover { background: var(--primary); transform: translateY(-3px); }
 
         @media (max-width: 900px) {
             .hero h1 { font-size: 2.2rem; }
@@ -288,8 +270,8 @@
                     <p class="pain-text">Se você passa horas sentado, quase sem perceber o tempo passar, <strong>isso não é falta de força — é falta de estratégia.</strong></p>
                     <div class="highlight-box">
                         <p style="font-size: 1.1rem; color: #7c2d12;">
-                            ⚠️ <strong>O custo de ignorar:</strong> Dor que vira rotina. Mas lembre-se: <br>
-                            <span style="font-size: 1.4em; color: var(--primary); font-weight: 700; display: block; margin-top: 15px; font-family: 'Poppins', sans-serif;">"A melhor postura é sempre a próxima."</span>
+                            ⚠️ <strong>O custo de ignorar:</strong> Aquela dorzinha chata vira rotina e <strong>cronifica</strong>. <br>
+                            <span style="font-size: 1.2em; color: var(--danger); font-weight: 700; display: block; margin-top: 10px; font-family: 'Poppins', sans-serif;">Não espere seu corpo travar para começar a agir.</span>
                         </p>
                     </div>
                 </div>
@@ -424,6 +406,10 @@
 
     <footer>
         <div class="container">
+            <a href="https://www.instagram.com/joaopfisioterapeuta/" target="_blank" class="social-link">
+                <span>📸 Siga no Instagram</span>
+            </a>
+
             <p>&copy; 2026 João Paulo Cardozo. Todos os direitos reservados.</p>
             <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.6;">Aviso Legal: Este produto não substitui o parecer médico profissional.</p>
         </div>
