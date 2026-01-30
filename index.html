@@ -139,6 +139,43 @@
         .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .highlight-box { background-color: #fff7ed; border-left: 6px solid var(--accent); padding: 25px; border-radius: 8px; margin-top: 30px; }
 
+        /* TEST DRIVE VIDEO BOX */
+        .test-drive-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 60px;
+            border: 2px dashed #cbd5e1;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .shorts-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            aspect-ratio: 9 / 16;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        
+        .shorts-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* SOLUTION */
         .video-badge { background: var(--primary); color: white; padding: 4px 12px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; margin-left: 10px; }
         .split-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
@@ -163,7 +200,9 @@
         @media (max-width: 900px) {
             .hero h1 { font-size: 2.2rem; }
             .pain-grid, .split-content, .author-box, .bonus-grid { grid-template-columns: 1fr; }
-            .author-box { text-align: center; }
+            .test-drive-container { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+            .test-drive-container ol { text-align: left; display: inline-block; }
+            .author-box { text-align: center; flex-direction: column; }
             .author-img { margin: 0 auto; }
         }
     </style>
@@ -221,19 +260,30 @@
         <div class="container">
             <h2 class="section-title">O Sistema <span>Coluna Saudável</span></h2>
             
-            <div style="background: white; border-radius: 15px; padding: 30px; margin-bottom: 50px; border: 2px dashed #cbd5e1; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h4 style="color: var(--primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                    🧪 Faça um teste agora (Levará 10 segundos):
-                </h4>
-                <p style="margin-bottom: 15px; color: var(--text-body);">Aí mesmo, sentado na frente da tela:</p>
-                <ol style="padding-left: 20px; color: var(--text-body); margin-bottom: 15px;">
-                    <li style="margin-bottom: 8px;">Coloque as mãos atrás da cabeça (como se fosse deitar na praia).</li>
-                    <li style="margin-bottom: 8px;">Inspire fundo e leve os cotovelos para trás, abrindo o peito para o teto.</li>
-                    <li>Solte o ar relaxando os ombros.</li>
-                </ol>
-                <p style="font-weight: 600; color: var(--success);">
-                    Sentiu o alívio? Esse é apenas 1 dos 20 movimentos de descompressão do Guia.
-                </p>
+            <div class="test-drive-container">
+                <div class="test-drive-text">
+                    <h4 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem;">
+                        🧪 Faça um teste agora (Levará 10 segundos):
+                    </h4>
+                    <p style="margin-bottom: 15px; color: var(--text-body);">Aí mesmo, sentado na frente da tela:</p>
+                    <ol style="padding-left: 20px; color: var(--text-body); margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">Coloque as mãos atrás da cabeça (como se fosse deitar na praia).</li>
+                        <li style="margin-bottom: 10px;">Inspire fundo e leve os cotovelos para trás, abrindo o peito para o teto.</li>
+                        <li>Solte o ar relaxando os ombros.</li>
+                    </ol>
+                    <p style="font-weight: 700; color: var(--success); font-size: 1.1rem;">
+                        <span style="font-size: 1.5rem;">👆</span> Assista ao vídeo ao lado para ver a execução perfeita!
+                    </p>
+                </div>
+                
+                <div class="shorts-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/aNlPcTjfkVM?rel=0&modestbranding=1&playsinline=1" 
+                        title="Exercício Abertura de Peito" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
 
             <div class="split-content">
