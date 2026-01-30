@@ -31,6 +31,7 @@
     fbq('init', '1535063944450903');
     fbq('track', 'PageView');
     </script>
+    
     <style>
         :root {
             --primary: #0284c7;
@@ -54,7 +55,7 @@
             padding-bottom: 80px;
         }
 
-        h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         img { max-width: 100%; height: auto; display: block; border-radius: 12px; }
 
@@ -95,7 +96,7 @@
             animation: pulse 2s infinite;
         }
 
-        /* HERO - Otimizado para Lead Frio */
+        /* HERO */
         .hero {
             background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.9)), url('foto-dor.jpg.png');
             background-size: cover;
@@ -147,11 +148,11 @@
         .author-box { display: flex; align-items: center; gap: 40px; background: #f0f9ff; padding: 50px; border-radius: 25px; }
         .author-img { width: 280px; border-radius: 20px; border: 5px solid white; }
 
-        /* BONUS CARD REESTRUTURADO */
+        /* BONUS CARD */
         .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .bonus-card { background: #1e293b; color: white; padding: 40px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
-        .bonus-tag { background: var(--accent); color: #000; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; margin-bottom: 20px; display: inline-block; }
-        .bonus-img { max-width: 220px; margin: 0 auto 25px; border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+        .bonus-card { background: #1e293b; color: white; padding: 40px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; justify-content: space-between; }
+        .bonus-tag { background: var(--accent); color: #000; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; margin-bottom: 20px; display: inline-block; align-self: center; }
+        .bonus-img { max-width: 200px; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
         /* OFFER BOX */
         .offer-box { background: white; border: 4px solid var(--primary); border-radius: 30px; padding: 50px; max-width: 800px; margin: 0 auto; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
@@ -186,6 +187,17 @@
         </div>
     </header>
 
+    <div style="background: #fff7ed; padding: 50px 20px; text-align: center; border-bottom: 1px solid #fed7aa;">
+        <div class="container" style="max-width: 900px;">
+            <p style="font-weight: 700; color: #c2410c; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 10px;">Pare e responda rápido:</p>
+            <h3 style="font-size: 1.6rem; color: #431407; margin-bottom: 15px;">Você sente aquela "queimação" entre os ombros ou o pescoço travado depois do almoço?</h3>
+            <p style="font-size: 1.1rem; color: #7c2d12;">
+                Provavelmente você já tentou trocar de cadeira ou forçar a coluna para ficar reta, mas a dor volta. 
+                A culpa não é sua. <br><strong>A "postura perfeita" é um mito</strong> que está te deixando mais rígido e dolorido.
+            </p>
+        </div>
+    </div>
+
     <section class="pain-section">
         <div class="container">
             <h2 class="section-title">Trabalhar em casa não precisa ser um<br><span>sacrifício para sua coluna</span>.</h2>
@@ -208,6 +220,22 @@
     <section class="solution-section">
         <div class="container">
             <h2 class="section-title">O Sistema <span>Coluna Saudável</span></h2>
+            
+            <div style="background: white; border-radius: 15px; padding: 30px; margin-bottom: 50px; border: 2px dashed #cbd5e1; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h4 style="color: var(--primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                    🧪 Faça um teste agora (Levará 10 segundos):
+                </h4>
+                <p style="margin-bottom: 15px; color: var(--text-body);">Aí mesmo, sentado na frente da tela:</p>
+                <ol style="padding-left: 20px; color: var(--text-body); margin-bottom: 15px;">
+                    <li style="margin-bottom: 8px;">Coloque as mãos atrás da cabeça (como se fosse deitar na praia).</li>
+                    <li style="margin-bottom: 8px;">Inspire fundo e leve os cotovelos para trás, abrindo o peito para o teto.</li>
+                    <li>Solte o ar relaxando os ombros.</li>
+                </ol>
+                <p style="font-weight: 600; color: var(--success);">
+                    Sentiu o alívio? Esse é apenas 1 dos 20 movimentos de descompressão do Guia.
+                </p>
+            </div>
+
             <div class="split-content">
                 <div class="image">
                     <img src="print-capa.png" alt="Mockup do Guia Coluna Saudável" class="ebook-mockup">
@@ -222,7 +250,7 @@
                         <p><strong>💻 Ergonomia Custo Zero:</strong> Ajuste monitor, cadeira e pés usando livros e almofadas de forma científica.</p>
                     </div>
                     <div class="benefit-card">
-                        <p><strong>🎬 Suporte em Vídeo:</strong> QR Codes e links diretos para você ver a execução exata de cada alongamento e exercício. <span class="video-badge">VÍDEO-AULAS</span></p>
+                        <p><strong>🎬 Suporte em Vídeo:</strong> Links diretos para você ver a execução exata de cada alongamento e exercício. <span class="video-badge">VÍDEO-AULAS</span></p>
                     </div>
                     <div class="benefit-card">
                         <p><strong>⚡ Pausas "Reset":</strong> Sequências de 60 segundos que você faz sem precisar sair da frente do computador.</p>
@@ -254,16 +282,16 @@
             <div class="bonus-grid">
                 <div class="bonus-card">
                     <span class="bonus-tag">BÔNUS #1</span>
-                    <img src="print-plano7dias.png" alt="Plano 7 Dias" class="bonus-img">
-                    <h3 style="margin: 20px 0;">O Desafio de 7 Dias</h3>
-                    <p>O mapa da mina. Um roteiro diário pronto: "Faça isso de manhã, essa pausa à tarde". Para você sentir a diferença já na primeira semana.</p>
+                    <img src="print-plano7dias.png" alt="Capa Plano 7 Dias" class="bonus-img">
+                    <h3 style="margin: 10px 0;">O Desafio de 7 Dias</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">O mapa da mina. Um roteiro diário pronto: "Faça isso de manhã, essa pausa à tarde". Para você sentir a diferença já na primeira semana.</p>
                     <p style="margin-top: 15px; font-weight: 800; color: var(--success);">VALOR: R$ 29,90 -> GRÁTIS</p>
                 </div>
                 <div class="bonus-card">
                     <span class="bonus-tag">BÔNUS #2</span>
-                    <img src="bonus-sono.png" alt="Guia do Sono" class="bonus-img">
-                    <h3 style="margin: 20px 0;">Ecossistema do Sono</h3>
-                    <p>Descubra como sua noite de sono regula sua sensibilidade à dor. Inclui o <strong>Planner Semanal</strong> de hábitos reparadores.</p>
+                    <img src="bonus-sono.png" alt="Capa Guia do Sono" class="bonus-img">
+                    <h3 style="margin: 10px 0;">Ecossistema do Sono</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Descubra como sua noite de sono regula sua sensibilidade à dor. Inclui o <strong>Checklist e Planner Semanal</strong> de hábitos reparadores.</p>
                     <p style="margin-top: 15px; font-weight: 800; color: var(--success);">VALOR: R$ 47,90 -> GRÁTIS</p>
                 </div>
             </div>
